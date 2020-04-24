@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>
+        View Result
+    </title>
+</head>
+
+<body>
+    <br>
+    <center>
+        <h1 class="text-success">Messages</h1>
+    </center>
+    <h3 class="text-warning">Your Link: </h3>
+    <p id="p1"></p>
+    <style>
+        .border-7 {
+            border-width: 7px !important;
+        }
+    </style>
+    <script>
+        const output = `<%= messagesToDisplay %>`
+        const a = output.split("./.;./.")
+        console.log("this is", output)
+        console.log("aa", a)
+        len = a.length
+        document.getElementById("p1").innerHTML+=`<%= link %>`
+        function fn1() {
+            for (var i = 0; i < len; i++) {
+                var outputValues = a[i];
+                var newDiv = document.createElement("div");
+                newDiv.className ="row mt-5 col-md-11.5 m-auto m-md-3 card card-body text-center mb-3 border border-primary border-7"   
+                var newContent = document.createTextNode(outputValues);
+                newDiv.appendChild(newContent);
+                var currentDiv = document.getElementById("divOut");
+                document.body.insertBefore(newDiv, currentDiv);
+            }           
+        }
+        fn1()
+    </script>
+    
+</body>
+
+</html>

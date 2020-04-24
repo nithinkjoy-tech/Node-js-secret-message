@@ -1,0 +1,35 @@
+<html>
+
+<body>
+
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body text-center">
+                <h2><i class="fab fa-node-js fa-3x"></i>
+                <p>Copy Your link and share it with your friends</p>
+            </h2>
+                <input id="t1" type="text" value="nkjsecretmessage.herokuapp.com/messages/link?id=" />
+                <input type="button" onclick="copyToClipboard()" id="myButton"
+                    class="btn btn-primary" autocomplete="off" value="Copy Link">
+                </input>
+                <script>
+                    document.getElementById("t1").value += "<%= value %>"
+
+                    function copyToClipboard() {
+                        document.getElementById("myButton").value="Copied"
+                        document.getElementById("myButton").className="btn btn-secondary"
+                        document.getElementById("t1").select()
+                        document.execCommand("copy")
+                    }
+                </script>
+                <br>
+                <br>
+                <form action="/result" method="GET">
+                <button type="submit" class="btn btn-info">Look at result</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

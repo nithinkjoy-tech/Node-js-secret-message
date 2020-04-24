@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>
+        Write a message
+    </title>
+</head>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-md-9 m-auto">
+            <div class="card card-body">
+                <h1 class="text-center mb-3">
+                    <p class="text-success">Write a secret message to</p>
+                    <center><h1 class="text-primary"><%= name %></h1></center> 
+                </h1>
+                <form action="/messagesent" method="POST">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input
+                          type="hidden"
+                          id="name"
+                          name="name"
+                          class="form-control border border-warning"
+                          value=""
+                        />
+                      </div>
+                    <div class="form-group"><textarea for="ans" name="ans1" id="ans1" cols="30" class="form-control"
+                            rows="5" placeholder="Enter your secret message" minlength="1" required=""></textarea></div>
+            </div>
+            <center><button type="submit" class="btn btn-primary">Send Message</button></center>
+            </form>
+
+            <script>
+              doc
+            </script>
+
+            <script type="text/javascript">
+                function getParamValuesByName (querystring) {
+                  var qstring = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                  for (var i = 0; i < qstring.length; i++) {
+                    var urlparam = qstring[i].split('=');
+                    if (urlparam[0] == querystring) {
+                       return urlparam[1];
+                    }
+                  }
+                }
+                var id = getParamValuesByName('id');
+                console.log(id)
+                document.getElementById("name").value=id
+                </script>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-user-plus"></i> Create Your Link
+            </h1>
+            <form action="/messages" method="POST">
+                <div class="form-group">
+                    <label for="name">Enter Your Name</label>
+                    <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" minlength="1" required="" />
+                </div>
+                <center><button type="submit" class="btn btn-primary">Create Your Link</button></center> 
+            </form>
+        </div>
+    </div>
+</div>
